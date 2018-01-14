@@ -1,14 +1,29 @@
 {
-  "name": "chinese",
-  "version": "1.0.0",
-  "description": "",
-  "main": "parser1.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chinese-conv": "^1.0.1"
-  }
+	"name": "glitch-twitterbot",
+	"version": "0.0.1",
+	"description": "Beep beep tweet!",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"twit": "^2.1.0",
+		"express": "^4.14.0",
+    "chance": "^1.0.13"
+	},
+	"engines": {
+		"node": "6.9.1"
+	},
+	"repository": {
+		"url": ""
+	},
+	"keywords": [
+		"node",
+    "glitch",
+		"gomix",
+    "hyperdev",
+		"twitter",
+		"twitterbot",
+		"bot"
+	]
 }
