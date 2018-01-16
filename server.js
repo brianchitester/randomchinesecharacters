@@ -22,14 +22,27 @@ app.use(express.static('public'));
 
 app.all("/" + process.env.BOT_ENDPOINT, function (request, response) {
   
+  let words = require('./1500 characters.json'),
+      sentences = require('./18000sentencesTrad.json');
   
+  let message = '';
   
-  
-  
+  if (chance.coin() === 'heads') {
+    let characters = words[chance.integer({min: 1, max: 910})];
+    message = characters.characters.tradtional + " / " + characters.characters.simplfied + "\n\n" +
+      characters.pinyin + "\n\n" +
+      characters.definition
+  } else {
+    let characters = sentences[chance.integer({min: 1, max: 1000})];
+    message = characters.simplified + "\n\n" +
+              characters.traditional + "\n\n" +
+              characters.pinyin + "\n\n" +
+              characters.english;
+  }
   
 /* The example below tweets out "Hello world!". */
   var resp = response;
-  T.post('statuses/update', { status: "" }, function(err, data, response) {
+  T.post('statuses/update', { status: message }, function(err, data, response) {
     if (err){
       resp.sendStatus(500);
       console.log('Error!');
